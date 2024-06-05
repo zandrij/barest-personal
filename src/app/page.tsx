@@ -1,5 +1,7 @@
-export default function() {
+const Landing = () => {
     return (
-        <>landing</>
+        <>Landing</>
     );
 };
+
+export default Landing;

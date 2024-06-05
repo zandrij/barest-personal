@@ -1,5 +1,7 @@
-export default function() {
+const Marketplace = () => {
     return (
-        <>marketplace</>
+        <>Marketplace</>
     );
 };
+
+export default Marketplace;

@@ -1,5 +1,7 @@
-export default function() {
+const Jobs = () => {
     return (
-        <>jobs</>
+        <>Jobs</>
     );
 };
+
+export default Jobs;

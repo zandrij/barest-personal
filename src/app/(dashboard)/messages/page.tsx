@@ -1,5 +1,7 @@
-export default function() {
+const Messages = () => {
     return (
-        <>messages</>
+        <>Messages</>
     );
 };
+
+export default Messages;

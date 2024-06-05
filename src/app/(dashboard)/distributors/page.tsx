@@ -1,5 +1,7 @@
-export default function() {
+const Distributors = () => {
     return (
-        <>distributors</>
+        <>Distributors</>
     );
 };
+
+export default Distributors;

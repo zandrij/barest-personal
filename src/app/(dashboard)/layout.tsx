@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import "../../presentation/styles/root.scss";
+
+import { Sidebar } from "@/presentation";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,8 +19,12 @@ export default function DashboardLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        layout dash
-        <main>{children}</main>
+        <main className="min-h-screen flex">
+          <Sidebar />
+          <div>
+            {children}
+          </div>
+        </main>
       </body>
     </html>
   );

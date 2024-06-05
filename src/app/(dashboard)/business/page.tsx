@@ -1,5 +1,7 @@
-export default function() {
+const Business = () => {
     return (
         <>business</>
     );
 };
+
+export default Business;
