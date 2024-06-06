@@ -2,9 +2,14 @@
     width: 304px;
     min-height: 100vh;
     box-sizing: border-box;
-    padding: 32px;
+    padding: 0px 32px;
     border-right: 1px solid #E0E0E0;
 
+    .logo {
+        max-width: 153px;
+        min-height: 32px;
+        max-height: 32px;
+    }
     .icon {
         max-width: 20px;
         min-width: 20px;

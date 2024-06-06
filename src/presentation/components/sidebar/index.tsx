@@ -60,8 +60,8 @@ export const Sidebar = () => {
 
     return (
         <nav className={`${style.sidebar}`}>
-            <div style={{ marginBottom: 30 }}>
-                <Image src={Logo} width={114} height={24} priority alt="logo-sidebar" />
+            <div style={{ margin: '2rem 0' }}>
+                <Image src={Logo} width={153} height={32} className={style.logo} priority alt="logo-sidebar" />
             </div>
             <ul className={`${style.menuItems}`}>
                 {options.map((option, i) => (
