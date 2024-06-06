@@ -1,8 +1,10 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import style from "./index.module.scss";
 
+import Logo from "@/assets/logos/logo-svg.svg";
 import { PiHouse } from "react-icons/pi";
 import { IoChatboxEllipsesOutline, IoPersonOutline } from "react-icons/io5";
 import { CiDeliveryTruck } from "react-icons/ci";
@@ -58,6 +60,9 @@ export const Sidebar = () => {
 
     return (
         <nav className={`${style.sidebar}`}>
+            <div style={{ marginBottom: 30 }}>
+                <Image src={Logo} width={114} height={24} priority alt="logo-sidebar" />
+            </div>
             <ul className={`${style.menuItems}`}>
                 {options.map((option, i) => (
                     <Link
