@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "../../presentation/styles/root.scss";
-
+import { Lato } from 'next/font/google'
 import { Sidebar } from "@/presentation";
 
-const inter = Inter({ subsets: ["latin"] });
+const lato = Lato({
+  weight: [ "100" , "400", "700", "900"],
+  subsets: ['latin'],
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,7 +20,7 @@ export default function DashboardLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={lato.className} suppressHydrationWarning={true}>
         <main className="min-h-screen flex">
           <Sidebar />
           <div>
