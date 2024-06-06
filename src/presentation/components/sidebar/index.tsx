@@ -65,15 +65,17 @@ export const Sidebar = () => {
             </div>
             <ul className={`${style.menuItems}`}>
                 {options.map((option, i) => (
-                    <Link
-                        key={i}
-                        href={option.url}
-                        className={`${style.buttonSide} ${initial === i && style.active}`}
-                        onClick={() => setInitial(i)}
-                    >
-                        {option.icon}
-                        <span>{option.name}</span>
-                    </Link>
+                    <li>
+                        <Link
+                            key={i}
+                            href={option.url}
+                            className={`${style.buttonSide} ${initial === i && style.active}`}
+                            onClick={() => setInitial(i)}
+                        >
+                            {option.icon}
+                            <span>{option.name}</span>
+                        </Link>
+                    </li>
                 ))}
             </ul>
         </nav>
