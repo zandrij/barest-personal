@@ -6,10 +6,8 @@ export async function getServerSideProps() {
     }
 }
 
-const UrgentAds = () => {
-    return (
-        <>UrgentAds</>
+export default function UrgentAds() {
+    return( 
+        <>urgent ads</>
     );
 };
-
-export default UrgentAds;

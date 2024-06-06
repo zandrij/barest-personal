@@ -6,10 +6,8 @@ export async function getServerSideProps() {
     }
 }
 
-const Jobs = () => {
-    return (
-        <>Jobs</>
+export default function Jobs() {
+    return( 
+        <>jobs</>
     );
 };
-
-export default Jobs;

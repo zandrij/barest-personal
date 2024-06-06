@@ -6,10 +6,8 @@ export async function getServerSideProps() {
     }
 }
 
-const Business = () => {
-    return (
+export default function Business() {
+    return( 
         <>business</>
     );
 };
-
-export default Business;
