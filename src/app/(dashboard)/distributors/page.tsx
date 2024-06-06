@@ -1,3 +1,11 @@
+export async function getServerSideProps() {
+    return {
+        props: {
+            
+        }
+    }
+}
+
 const Distributors = () => {
     return (
         <>Distributors</>

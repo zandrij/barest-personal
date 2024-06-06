@@ -1,3 +1,11 @@
+export async function getServerSideProps() {
+    return {
+        props: {
+            
+        }
+    }
+}
+
 const Profile = () => {
     return (
         <>Profile</>
@@ -5,3 +13,4 @@ const Profile = () => {
 };
 
 export default Profile;
+
