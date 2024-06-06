@@ -65,9 +65,8 @@ export const Sidebar = () => {
             </div>
             <ul className={`${style.menuItems}`}>
                 {options.map((option, i) => (
-                    <li>
+                    <li key={i}>
                         <Link
-                            key={i}
                             href={option.url}
                             className={`${style.buttonSide} ${initial === i && style.active}`}
                             onClick={() => setInitial(i)}
