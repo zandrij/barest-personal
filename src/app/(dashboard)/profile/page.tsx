@@ -1,10 +1,4 @@
-export async function getServerSideProps() {
-    return {
-        props: {
-            
-        }
-    }
-}
+'use server'
 
 const Profile = () => {
     return (
