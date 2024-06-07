@@ -1,6 +1,10 @@
+import Link from "next/link";
+
 const Landing = () => {
     return (
-        <>Landing</>
+        <>
+        <Link href={'/home'}>dashboard</Link>
+        </>
     );
 };
 
