@@ -39,11 +39,15 @@
         .visibleButton {
             order: 2;
         }
+
+        h1 { 
+            font-size: 18px;
+        }
+
         margin-bottom: 10px;
     } 
 
     &.spaceBetween {
         justify-content: space-between;
-        
     }
 }
