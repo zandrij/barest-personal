@@ -1,3 +1,5 @@
+import { HeaderLayout } from "@/presentation";
+
 export default function MarketplaceLayout({
   children,
 }: Readonly<{
@@ -5,7 +7,9 @@ export default function MarketplaceLayout({
 }>) {
   return (
     <div>
-        <div>marketplace dash </div>
+        <article>
+            <HeaderLayout title="Marketplace" visibleSearch={false} />
+        </article>
         {children}
     </div>
   );

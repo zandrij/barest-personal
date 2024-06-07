@@ -1,0 +1,23 @@
+.buttonHeader {
+    padding: 10px 20px;
+    width: fit-content;
+    max-height: 40px;
+    font-size: 14px;
+    font-family: 'Lato';
+    font-weight: 700;
+    line-height: 20px;
+
+    border: 1px solid var(--darkpurple);
+    color: var(--darkpurple);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all ease-in .4s;
+    &:hover {
+        background-color: var(--darkpurple);
+        color: var(--white);
+
+        transition: all ease-in-out .4s;
+    }
+}

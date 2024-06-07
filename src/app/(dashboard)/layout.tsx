@@ -1,10 +1,6 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "../../presentation/styles/root.scss";
-
 import { Sidebar } from "@/presentation";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,10 +14,10 @@ export default function DashboardLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body>
         <main className="min-h-screen flex">
           <Sidebar />
-          <div>
+          <div style={{ width: 'calc(100% - 304px)', overflow: 'hidden' }}>
             {children}
           </div>
         </main>

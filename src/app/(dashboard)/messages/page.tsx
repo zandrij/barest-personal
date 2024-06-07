@@ -1,7 +1,9 @@
-const Messages = () => {
-    return (
-        <>Messages</>
-    );
-};
+import { Conversations } from "@/presentation";
 
-export default Messages;
+export default function MessagePage() {
+    return (
+        <article>
+            <Conversations />
+        </article>
+    )
+}

@@ -1,6 +1,13 @@
+import { HeaderLayout } from "@/presentation";
+
 const Distributors = () => {
     return (
-        <>Distributors</>
+        <article>
+            <HeaderLayout 
+                searchPlaceholder="Buscar distribuidores"
+                title="Distribuidores" 
+            />
+        </article>
     );
 };
 

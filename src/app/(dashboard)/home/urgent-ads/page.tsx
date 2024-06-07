@@ -1,7 +1,5 @@
-const UrgentAds = () => {
-    return (
-        <>UrgentAds</>
+export default async function UrgentAds() {
+    return( 
+        <>urgent ads</>
     );
 };
-
-export default UrgentAds;
