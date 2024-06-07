@@ -1,9 +1,9 @@
 "use client";
 import { FC } from "react";
 import style from "./index.module.scss";
-import { BsPlusLg } from "react-icons/bs";
 import { ButtonHeader } from "../button-header";
 import { InputHeader } from "../input-header";
+import { BsPlusLg } from 'react-icons/bs';
 
 interface Props {
     title: string;
