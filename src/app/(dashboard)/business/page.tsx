@@ -1,6 +1,6 @@
 'use server'
 
-export default function Business() {
+export default async function Business() {
     return( 
         <>business</>
     );
