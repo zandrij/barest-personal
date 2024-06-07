@@ -1,0 +1,45 @@
+.inputHeader {
+    flex-grow: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    input {
+        width: 100%;
+        height: 40px;
+        border-radius: 12px;
+        border: 1px solid var(--grayE0);
+        outline: none;
+        padding: 12px;
+        font-size: 14px;
+        font-family: 'Lato';
+        font-weight: 600;
+        line-height: 20px;
+
+        &::placeholder {
+            color: var(--gray9E);
+        }
+    }
+
+    .separator {
+        display: block;
+        width: .5px;
+        height: 26px;
+        background-color: var(--grayE0);
+        position: absolute;
+        right: 50px;
+    }
+
+    .button {
+        width: 26px;
+        height: 26px;
+        background-color: var(--orange);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        right: 12px;
+        color: var(--white);
+    }
+}

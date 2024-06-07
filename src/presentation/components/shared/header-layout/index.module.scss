@@ -15,4 +15,9 @@
         margin: 0;
         font-family: 'Sora';
     }
+
+
+    &.spaceBetween {
+        justify-content: space-between;
+    }
 }

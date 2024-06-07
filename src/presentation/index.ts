@@ -5,3 +5,5 @@ export * from "./utils/MarketplaceIcon";
 
 
 export * from "./components/shared/header-layout";
+export * from "./components/shared/button-header";
+export * from "./components/shared/input-header";

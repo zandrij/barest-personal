@@ -8,7 +8,7 @@ export default function MarketplaceLayout({
   return (
     <div>
         <article>
-            <HeaderLayout title="Marketplace" />
+            <HeaderLayout title="Marketplace" visibleSearch={false} />
         </article>
         {children}
     </div>

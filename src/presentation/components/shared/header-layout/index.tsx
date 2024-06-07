@@ -1,23 +1,48 @@
+"use client";
 import { FC } from "react";
 import style from "./index.module.scss";
+import { BsPlusLg } from "react-icons/bs";
+import { ButtonHeader } from "../button-header";
+import { InputHeader } from "../input-header";
 
 interface Props {
-    title: string,
-    search?: boolean,
-    searchPlaceholder?: string,
-    onClick?: () => void
+    title: string;
+    onClickSearch?: () => void;
+    searchPlaceholder?: string;
+    visibleSearch?: boolean;
+
+    onClickButton?: () => void;
+    textButton?: string;
+    visibleButton?: boolean;
 }
 
 export const HeaderLayout: FC<Props> = ({
     title,
-    search = false,
-    searchPlaceholder,
-    onClick
+    onClickSearch,
+    searchPlaceholder = "Buscar anuncio",
+    onClickButton,
+    textButton = "Publicar anuncio",
+    visibleButton = true,
+    visibleSearch = true,
 }) => {
-    return(
-        <div className={style.headLayout}>
+    return (
+        <div
+            className={`${style.headLayout} ${visibleButton && style.spaceBetween}`}
+            style={{ gap: visibleSearch ? 50 : 0 }}
+            >
             <h1>{title}</h1>
-            
+
+            {visibleSearch && (
+                <InputHeader onClick={onClickSearch} placeholder={searchPlaceholder} />
+            )}
+
+            {visibleButton && (
+                <ButtonHeader
+                    icon={<BsPlusLg size={18} />}
+                    text={textButton}
+                    onClick={onClickButton}
+                />
+            )}
         </div>
-    )
+    );
 };
