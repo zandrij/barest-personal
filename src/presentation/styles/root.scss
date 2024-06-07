@@ -2,10 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
-
 :root {
     --darkpurple: #222240;
     --white: #fff;
-
     --gray42: #424242;
 }
+
+@font-face {
+    font-family: "Sora";
+    src: url("../../assets/fonts/Sora-Regular.ttf");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "Sora";
+    src: url("../../assets/fonts/Sora-Medium.ttf");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "Sora";
+    src: url("../../assets/fonts/Sora-SemiBold.ttf");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "Sora";
+    src: url("../../assets/fonts/Sora-Bold.ttf");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "Lato";
+    src: url("../../assets/fonts/Lato-Regular.ttf");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "Lato";
+    src: url("../../assets/fonts/Lato-Bold.ttf");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "Lato";
+    src: url("../../assets/fonts/Lato-Black.ttf");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }

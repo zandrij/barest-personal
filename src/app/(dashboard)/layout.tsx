@@ -1,12 +1,6 @@
 import type { Metadata } from "next";
 import "../../presentation/styles/root.scss";
-import { Lato } from 'next/font/google'
 import { Sidebar } from "@/presentation";
-
-const lato = Lato({
-  weight: [ "100" , "400", "700", "900"],
-  subsets: ['latin'],
-})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,10 +14,10 @@ export default function DashboardLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={lato.className} suppressHydrationWarning={true}>
+      <body>
         <main className="min-h-screen flex">
           <Sidebar />
-          <div>
+          <div style={{ width: 'calc(100% - 304px)' }}>
             {children}
           </div>
         </main>

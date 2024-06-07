@@ -1,21 +1,25 @@
 .sidebar {
     width: 304px;
+    min-height: 304px;
     min-height: 100vh;
     box-sizing: border-box;
     padding: 0px 32px;
     border-right: 1px solid #E0E0E0;
+    font-family: 'Lato';
 
     .logo {
         max-width: 153px;
         min-height: 32px;
         max-height: 32px;
     }
+
     .icon {
         max-width: 20px;
         min-width: 20px;
         max-height: 20px;
         min-height: 20px;
     }
+
     .buttonSide {
         display: flex;
         gap: 10px;
@@ -32,7 +36,7 @@
             background-color: var(--darkpurple);
             color: var(--white);
             transition: all ease-in .4s;
-
+            font-weight: 700;
         }
 
         &:hover:nth-child(2) {
@@ -40,6 +44,7 @@
                 stroke: var(--white);
             }
         }
+
         &:hover:not(:nth-child(2)) {
             svg {
                 fill: var(--white);
@@ -52,9 +57,10 @@
             font-weight: 700;
         }
     }
+
     .menuItems {
         display: flex;
         flex-direction: column;
-        gap: 10px!important;
+        gap: 10px !important;
     }
 }

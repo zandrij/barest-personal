@@ -1,5 +1,9 @@
+import { HeaderLayout } from "@/presentation";
+
 export default async function Jobs() {
     return( 
-        <>jobs</>
+        <article>
+            <HeaderLayout title="Empleos" />
+        </article>
     );
 };

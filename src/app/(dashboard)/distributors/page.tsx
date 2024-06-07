@@ -1,6 +1,10 @@
+import { HeaderLayout } from "@/presentation";
+
 const Distributors = () => {
     return (
-        <>Distributors</>
+        <article>
+            <HeaderLayout title="Distribuidores" />
+        </article>
     );
 };
 
