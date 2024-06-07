@@ -1,0 +1,25 @@
+.boxProfile {
+    width: 370px;
+    border-right: 1px solid var(--grayE0);
+    display: flex;
+    flex-direction: column;
+
+    .headBox {
+        width: 100%;
+        padding: 20px 16px 16px;
+        // background-color: blue;
+
+        h1 {
+            font-size: 24px;
+            font-weight: 700;
+            font-family: 'Sora';
+            line-height: 32px;
+            color: var(--darkpurple);
+        }
+    }
+    .filterBox {
+        width: 100%;
+        padding: 8px 16px 16px;
+        // background-color: red;
+    }
+}

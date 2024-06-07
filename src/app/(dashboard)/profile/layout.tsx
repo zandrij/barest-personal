@@ -1,3 +1,5 @@
+import { ProfileSidebar } from "@/presentation";
+
 export default function ProfileLayout({
     children,
   }: Readonly<{
@@ -5,7 +7,7 @@ export default function ProfileLayout({
   }>) {
     return (
       <div>
-          <div>layout profile </div>
+          <ProfileSidebar />
           {children}
       </div>
     );

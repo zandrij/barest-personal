@@ -10,3 +10,4 @@ export * from "./components/shared/input-header";
 
 
 export * from "./modules/messages/containers/conversations";
+export * from "./modules/profile/containers/profile-sidebar";
