@@ -17,7 +17,7 @@ export default function DashboardLayout({
       <body>
         <main className="min-h-screen flex">
           <Sidebar />
-          <div style={{ width: 'calc(100% - 304px)' }}>
+          <div style={{ width: 'calc(100% - 304px)', overflow: 'hidden' }}>
             {children}
           </div>
         </main>

@@ -1,7 +1,13 @@
-const Home = () => {
+import { HeadHome } from "@/presentation";
+import style from "@/presentation/modules/home/styles/home.module.scss";
+
+export default function Home() {
     return (
-        <>Home</>
+        <article className={`${style.homeBody} min-h-full`}>
+            <section className={style.homeLeft}>
+                <HeadHome />
+            </section>
+            <section className={style.homeAds}></section>
+        </article>
     );
 };
-
-export default Home;
