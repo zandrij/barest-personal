@@ -1,6 +1,6 @@
 import { HeaderLayout } from "@/presentation";
 
-export default async function Business() {
+export default function Business() {
     return( 
         <article>
             <HeaderLayout 

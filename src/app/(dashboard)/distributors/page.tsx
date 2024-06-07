@@ -1,6 +1,6 @@
 import { HeaderLayout } from "@/presentation";
 
-const Distributors = () => {
+export default function Distributors() {
     return (
         <article>
             <HeaderLayout 
@@ -10,5 +10,3 @@ const Distributors = () => {
         </article>
     );
 };
-
-export default Distributors;
