@@ -1,0 +1,49 @@
+.headLayout {
+    width: 100%;
+    padding: 16px 32px;
+    background-color: var(--white);
+    box-shadow: 0px 2px 8px 0px #00000014;
+    min-height: 72px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    order: 0;
+
+    h1 {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 32px;
+        color: var(--darkpurple);
+        margin: 0;
+        font-family: 'Sora';
+        order: 1;
+    }
+
+    .inputHeader {
+        order: 2;
+        flex-grow: 1;
+        flex-basis: 0;
+    }
+
+    .visibleButton {
+        order: 3;
+    }
+
+    @media only screen and (max-width: 640px) {
+        .inputHeader {
+            order: 3;
+            width: 100%;
+            flex-basis: auto;
+        }
+
+        .visibleButton {
+            order: 2;
+        }
+        margin-bottom: 10px;
+    } 
+
+    &.spaceBetween {
+        justify-content: space-between;
+        
+    }
+}

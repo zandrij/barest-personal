@@ -1,6 +1,6 @@
 .sidebar {
     width: 304px;
-    min-height: 304px;
+    min-width: 304px;
     min-height: 100vh;
     box-sizing: border-box;
     padding: 0px 32px;
@@ -11,6 +11,15 @@
         max-width: 153px;
         min-height: 32px;
         max-height: 32px;
+    }
+
+    .boxImage {
+        display: flex;
+        align-items: center;
+        margin: 2rem 0;
+        .hamburguerMain {
+            display: none;
+        }
     }
 
     .icon {
@@ -63,4 +72,37 @@
         flex-direction: column;
         gap: 10px !important;
     }
+
+    //responsive
+    @media only screen and (max-width: 990px) {
+        background-color: #fff;
+        width: 100%;
+        overflow: hidden;
+        height: 60px;
+        min-height: 60px;
+        
+        .logo {
+            max-width: 100px;
+        }
+
+        .boxImage {
+            display: flex;
+            justify-content: space-between;
+            margin: 1rem 0;
+
+            .hamburguerMain {
+                display: block;
+            }
+        }
+        .menuItems {
+            margin-top: 30px;
+        }
+    }
+}
+
+.openMain {
+    height: 100vh!important;
+    position: fixed;
+    z-index: 1;
+    gap: 20px;
 }

@@ -3,7 +3,8 @@ import { FC } from "react";
 import style from "./index.module.scss";
 import { ButtonHeader } from "../button-header";
 import { InputHeader } from "../input-header";
-import { BsPlusLg } from 'react-icons/bs';
+import { BsPlusLg } from "react-icons/bs";
+import { useWindowSize } from "@uidotdev/usehooks";
 
 interface Props {
     title: string;
@@ -13,6 +14,7 @@ interface Props {
 
     onClickButton?: () => void;
     textButton?: string;
+    textButtonResponsive?: string;
     visibleButton?: boolean;
 }
 
@@ -22,26 +24,36 @@ export const HeaderLayout: FC<Props> = ({
     searchPlaceholder = "Buscar anuncio",
     onClickButton,
     textButton = "Publicar anuncio",
+    textButtonResponsive = "Publicar",
     visibleButton = true,
     visibleSearch = true,
 }) => {
+  const width = useWindowSize().width!;
+
     return (
         <div
             className={`${style.headLayout} ${visibleButton && style.spaceBetween}`}
-            style={{ gap: visibleSearch ? 50 : 0 }}
-            >
+            style={{ gap: visibleSearch && width > 640 ? 50 : width <= 640 ? 22 : 0 }}
+        >
             <h1>{title}</h1>
 
             {visibleSearch && (
-                <InputHeader onClick={onClickSearch} placeholder={searchPlaceholder} />
+                <div className={style.inputHeader}>
+                    <InputHeader
+                        onClick={onClickSearch}
+                        placeholder={searchPlaceholder}
+                    />
+                </div>
             )}
 
             {visibleButton && (
-                <ButtonHeader
-                    icon={<BsPlusLg size={18} />}
-                    text={textButton}
-                    onClick={onClickButton}
-                />
+                <div className={style.visibleButton}>
+                    <ButtonHeader
+                        icon={<BsPlusLg size={18} />}
+                        text={width <= 990 ? textButtonResponsive : textButton}
+                        onClick={onClickButton}
+                    />
+                </div>
             )}
         </div>
     );

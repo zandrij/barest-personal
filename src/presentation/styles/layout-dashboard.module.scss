@@ -1,0 +1,15 @@
+.layout {
+    @media only screen and (max-width: 990px) {
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+.content {
+    width: calc(100% - 304px);
+    overflow: hidden;
+
+    @media only screen and (max-width: 990px) {
+        width: 100%;
+    }
+}

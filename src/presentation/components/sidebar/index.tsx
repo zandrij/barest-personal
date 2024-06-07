@@ -11,6 +11,7 @@ import { CiDeliveryTruck } from "react-icons/ci";
 import MarketplaceIcon from "@/presentation/utils/MarketplaceIcon";
 import JobsIcon from "@/presentation/utils/JobsIcon";
 import BusinessIcon from "@/presentation/utils/BusinessIcon";
+import { HamburguerMenu } from "../shared/hamburguer-menu";
 
 interface Options {
   name: string;
@@ -20,6 +21,7 @@ interface Options {
 
 export const Sidebar = () => {
     const [initial, setInitial] = useState(0);
+    const [menu, setMenu] = useState(false);
     const [options] = useState<Options[]>([
         {
             name: "Inicio",
@@ -59,9 +61,10 @@ export const Sidebar = () => {
     ]);
 
     return (
-        <nav className={`${style.sidebar}`}>
-            <div style={{ margin: '2rem 0' }}>
-                <Image src={Logo} width={153} height={32} className={style.logo} priority alt="logo-sidebar" />
+        <nav className={`${style.sidebar} ${menu && style.openMain}`}>
+            <div className={style.boxImage}>
+                <Image src={Logo} className={style.logo} priority alt="logo-sidebar" />
+                <HamburguerMenu onClick={() => setMenu(!menu)} />
             </div>
             <ul className={`${style.menuItems}`}>
                 {options.map((option, i) => (

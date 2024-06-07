@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "../../presentation/styles/root.scss";
+import style from "../../presentation/styles/layout-dashboard.module.scss";
 import { Sidebar } from "@/presentation";
 
 export const metadata: Metadata = {
@@ -15,9 +16,9 @@ export default function DashboardLayout({
   return (
     <html lang="en">
       <body>
-        <main className="min-h-screen flex">
+        <main className={`${style.layout} min-h-screen flex`}>
           <Sidebar />
-          <div style={{ width: 'calc(100% - 304px)', overflow: 'hidden' }}>
+          <div className={`${style.content}`}>
             {children}
           </div>
         </main>
