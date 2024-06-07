@@ -1,5 +1,3 @@
-'use server'
-
 const Distributors = () => {
     return (
         <>Distributors</>

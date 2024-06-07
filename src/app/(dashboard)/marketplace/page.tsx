@@ -1,5 +1,3 @@
-'use server'
-
 const Marketplace = () => {
     return (
         <>Marketplace</>
