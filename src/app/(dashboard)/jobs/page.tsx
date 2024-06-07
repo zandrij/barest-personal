@@ -1,6 +1,6 @@
 'use server'
 
-export default function Jobs() {
+export default async function Jobs() {
     return( 
         <>jobs</>
     );

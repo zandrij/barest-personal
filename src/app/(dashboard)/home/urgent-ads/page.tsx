@@ -1,6 +1,6 @@
 'use server'
 
-export default function UrgentAds() {
+export default async function UrgentAds() {
     return( 
         <>urgent ads</>
     );
