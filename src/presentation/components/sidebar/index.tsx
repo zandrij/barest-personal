@@ -1,22 +1,104 @@
 'use client'
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import style from "./index.module.scss";
 
-import Logo from "@/assets/logos/logo-svg.svg";
-import { HamburguerMenu } from "../shared/hamburguer-menu";
 import { useWindowSize } from "@uidotdev/usehooks";
 import { useMenuStore } from "@/presentation/stores/menu-store";
+
+import Logo from "@/assets/logos/logo-svg.svg";
+import { HamburguerMenu } from "../shared/hamburguer-menu";
+import { PiHouse } from 'react-icons/pi';
+import { CiDeliveryTruck } from "react-icons/ci";
+import { IoChatboxEllipsesOutline, IoPersonOutline } from "react-icons/io5";
+import MarketplaceIcon from "@/presentation/utils/MarketplaceIcon";
+import JobsIcon from "@/presentation/utils/JobsIcon";
+import BusinessIcon from "@/presentation/utils/BusinessIcon";
+import { usePathname } from "next/navigation";
+
+interface Options {
+    name: string;
+    icon: any;
+    url: string;
+}
 
 export const Sidebar = () => {
 
     const width = useWindowSize().width!;
 
-    const initial = useMenuStore(state => state.initial);
     const menu = useMenuStore(state => state.visible);
     const setMenu = useMenuStore(state => state.setVisible);
-    const setInitial = useMenuStore(state => state.setInitial);
-    const options = useMenuStore(state => state.options);
+
+    const [initial, setInitial] = useState<number | null>(null);
+    const [options] = useState<Options[]>([
+        {
+            name: "Inicio",
+            icon: PiHouse,
+            url: "/home",
+        },
+        {
+            name: "Marketplace",
+            icon: MarketplaceIcon,
+            url: "/marketplace",
+        },
+        {
+            name: "Empleos",
+            icon: JobsIcon,
+            url: "/jobs",
+        },
+        {
+            name: "Negocios",
+            icon: BusinessIcon,
+            url: "/business",
+        },
+        {
+            name: "Distribuidores",
+            icon: CiDeliveryTruck,
+            url: "/distributors",
+        },
+        {
+            name: "Mensajes",
+            icon: IoChatboxEllipsesOutline,
+            url: "/messages",
+        },
+        {
+            name: "Perfil",
+            icon: IoPersonOutline,
+            url: "/profile",
+        },
+    ]);
+
+    const pathname = usePathname();
+
+    useEffect(() => {
+        switch (pathname) {
+            case '/home':
+                setInitial(0)
+            break;
+            case '/marketplace':
+                setInitial(1)
+            break;
+            case '/jobs':
+                setInitial(2)
+            break;
+            case '/business':
+                setInitial(3)
+            break;
+            case '/distributors':
+                setInitial(4)
+            break;
+            case '/messages':
+                setInitial(5)
+            break;
+            case '/profile':
+                setInitial(6)
+            break;
+            default:
+                setInitial(null)
+            break;
+        }
+    },[]);
 
     return (
         <nav className={`${style.sidebar} ${menu && style.openMain}`}>

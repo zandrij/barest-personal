@@ -1,6 +1,12 @@
 import { HeaderLayout } from "@/presentation";
 
-export default function Jobs() {
+export default async function Jobs({
+    searchParams
+}: {
+    searchParams: {
+        search?: string
+    }
+}) {
     return( 
         <article>
             <HeaderLayout 

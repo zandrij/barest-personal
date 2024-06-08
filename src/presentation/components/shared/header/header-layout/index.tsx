@@ -1,3 +1,4 @@
+'use client'
 import { FC } from "react";
 import style from "./index.module.scss";
 import { ButtonHeader } from "../button-header";
