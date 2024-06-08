@@ -1,6 +1,5 @@
-import { HeadHome, InputSimple } from "@/presentation";
+import { HeadHome, SelectSimple } from "@/presentation";
 import style from "@/presentation/modules/home/styles/home.module.scss";
-import { Bs0Circle } from "react-icons/bs";
 
 export default function Home() {
     return (
@@ -9,13 +8,15 @@ export default function Home() {
                 <HeadHome />
 
                 <div style={{ maxWidth: 400 }}>
-                    <InputSimple 
+                    <SelectSimple 
                         label="Input prueba" 
                         required 
-                        placeholder="Input placeholder" 
-                        icon={<Bs0Circle />}
-                        error
-                        errorMessage="Error input"
+                        placeholder="Input placeholder"
+                        options={[
+                            {id: 1, name: 'prueba 1'},
+                            {id: 2, name: 'prueba 2'},
+                            {id: 3, name: 'prueba 3'}
+                        ]}
                     />
                 </div>
 
