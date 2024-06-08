@@ -1,6 +1,5 @@
-import { PageParams } from "@/infrastructure";
 
-export default async function ProfilePage(params: PageParams) {
+export default async function ProfilePage() {
     return(
         <>ProfilePage</>
     );

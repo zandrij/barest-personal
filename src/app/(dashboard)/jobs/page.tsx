@@ -1,7 +1,6 @@
-import { PageParams } from "@/infrastructure";
 import { HeaderLayout } from "@/presentation";
 
-export default async function Jobs(params: PageParams) {
+export default async function Jobs() {
     return( 
         <article>
             <HeaderLayout 

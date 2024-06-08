@@ -1,5 +1,5 @@
 'use client'
-import { FC } from "react";
+import { FC, Suspense } from "react";
 import style from "./index.module.scss";
 import { ButtonHeader } from "../button-header";
 import { InputHeader } from "../input-header";
@@ -39,12 +39,14 @@ export const HeaderLayout: FC<Props> = ({
             <h1>{title}</h1>
 
             {visibleSearch && (
-                <div className={style.inputHeader}>
-                    <InputHeader
-                        onClick={onClickSearch}
-                        placeholder={searchPlaceholder}
-                    />
-                </div>
+                <Suspense>
+                    <div className={style.inputHeader}>
+                        <InputHeader
+                            onClick={onClickSearch}
+                            placeholder={searchPlaceholder}
+                        />
+                    </div>
+                </Suspense>
             )}
 
             {visibleButton && (

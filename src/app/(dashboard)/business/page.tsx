@@ -1,7 +1,6 @@
-import { PageParams } from "@/infrastructure";
 import { HeaderLayout } from "@/presentation";
 
-export default async function BusinessPage(params: PageParams) {
+export default async function BusinessPage() {
     return (
         <article>
             <HeaderLayout 

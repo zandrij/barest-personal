@@ -1,6 +1,5 @@
-import { PageParams } from "@/infrastructure";
 
-export default async function Marketplace(params: PageParams) {
+export default async function Marketplace() {
     return (
         <article>
             marketplace

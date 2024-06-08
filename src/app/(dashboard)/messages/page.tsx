@@ -1,7 +1,6 @@
-import { PageParams } from "@/infrastructure";
 import { Conversations } from "@/presentation";
 
-export default async function MessagePage(params: PageParams) {
+export default async function MessagePage() {
     return (
         <article>
             <Conversations />
