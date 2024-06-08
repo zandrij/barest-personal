@@ -29,6 +29,10 @@
         order: 3;
     }
 
+    &.gap {
+        gap: 50px;
+    }
+
     @media only screen and (max-width: 640px) {
         .inputHeader {
             order: 3;
@@ -38,6 +42,10 @@
 
         .visibleButton {
             order: 2;
+        }
+
+        &.gap {
+            gap: 20px;
         }
 
         h1 { 
@@ -50,4 +58,6 @@
     &.spaceBetween {
         justify-content: space-between;
     }
+
+    
 }
