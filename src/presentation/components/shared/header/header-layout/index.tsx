@@ -1,10 +1,8 @@
-"use client";
 import { FC } from "react";
 import style from "./index.module.scss";
 import { ButtonHeader } from "../button-header";
 import { InputHeader } from "../input-header";
 import { BsPlusLg } from "react-icons/bs";
-import { useWindowSize } from "@uidotdev/usehooks";
 
 interface Props {
     title: string;
@@ -28,12 +26,14 @@ export const HeaderLayout: FC<Props> = ({
     visibleButton = true,
     visibleSearch = true,
 }) => {
-  const width = useWindowSize().width!;
-
+  const width = 780
     return (
         <div
-            className={`${style.headLayout} ${visibleButton && style.spaceBetween}`}
-            style={{ gap: visibleSearch && width > 640 ? 50 : width <= 640 ? 22 : 0 }}
+            className={`
+                ${style.headLayout} 
+                ${visibleButton && style.spaceBetween}
+                ${visibleButton && style.gap}
+            `}
         >
             <h1>{title}</h1>
 
