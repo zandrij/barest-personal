@@ -1,7 +1,8 @@
+import { PageParams } from "@/infrastructure";
 import { HeadHome, SelectSimple } from "@/presentation";
 import style from "@/presentation/modules/home/styles/home.module.scss";
 
-export default function Home() {
+export default async function Home(params: PageParams) {
     return (
         <article className={`${style.homeBody} min-h-full`}>
             <section className={style.homeLeft}>
@@ -19,10 +20,8 @@ export default function Home() {
                         ]}
                     />
                 </div>
-
             </section>
             <section className={style.homeAds}>
-                
             </section>
         </article>
     );

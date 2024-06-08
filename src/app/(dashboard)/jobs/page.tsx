@@ -1,12 +1,7 @@
+import { PageParams } from "@/infrastructure";
 import { HeaderLayout } from "@/presentation";
 
-export default async function Jobs({
-    searchParams
-}: {
-    searchParams: {
-        search?: string
-    }
-}) {
+export default async function Jobs(params: PageParams) {
     return( 
         <article>
             <HeaderLayout 
