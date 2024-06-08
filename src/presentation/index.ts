@@ -8,6 +8,8 @@ export * from "./components/shared/header/header-layout";
 export * from "./components/shared/header/button-header";
 export * from "./components/shared/header/input-header";
 
+export * from "./components/shared/form/input-simple";
+
 
 export * from "./modules/messages/containers/conversations";
 export * from "./modules/profile/containers/profile-sidebar";
