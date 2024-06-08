@@ -3,7 +3,7 @@ import { FC } from "react";
 import style from "./index.module.scss";
 import { LuSearch } from "react-icons/lu";
 import { usePathname, useSearchParams, useRouter } from "next/navigation";
-import { useDebounce, useDebouncedCallback } from "use-debounce";
+import { useDebouncedCallback } from "use-debounce";
 
 interface Props {
     placeholder: string,
