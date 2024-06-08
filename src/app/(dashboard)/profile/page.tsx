@@ -1,8 +1,6 @@
-const Profile = () => {
-    return (
-        <>Profile</>
+
+export default async function ProfilePage() {
+    return(
+        <>ProfilePage</>
     );
 };
-
-export default Profile;
-

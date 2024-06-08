@@ -1,6 +1,6 @@
 import { Conversations } from "@/presentation";
 
-export default function MessagePage() {
+export default async function MessagePage() {
     return (
         <article>
             <Conversations />

@@ -6,11 +6,11 @@ export default function MarketplaceLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div>
+    <section>
         <article>
             <HeaderLayout title="Marketplace" visibleSearch={false} />
         </article>
         {children}
-    </div>
+    </section>
   );
 }

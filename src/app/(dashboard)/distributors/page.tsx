@@ -1,6 +1,7 @@
+import { PageParams } from "@/infrastructure";
 import { HeaderLayout } from "@/presentation";
 
-export default function Distributors() {
+export default async function Distributors() {
     return (
         <article>
             <HeaderLayout 
