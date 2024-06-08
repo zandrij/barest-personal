@@ -8,8 +8,6 @@ import { HamburguerMenu } from "../shared/hamburguer-menu";
 import { useWindowSize } from "@uidotdev/usehooks";
 import { useMenuStore } from "@/presentation/stores/menu-store";
 
-
-
 export const Sidebar = () => {
 
     const width = useWindowSize().width!;
