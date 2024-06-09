@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import style from "./index.module.scss";
 
 import { useWindowSize } from "@uidotdev/usehooks";
 import { useMenuStore } from "@/presentation/stores/menu-store";
@@ -101,11 +100,18 @@ export const Sidebar = () => {
     },[]);
 
     return (
-        <nav className={`${style.sidebar} ${menu && style.openMain}`}>
-            <div className={style.boxImage}>
+        <nav className={`w-[304px] min-h-screen box-border px-8 border-r border-[--grayE0] font-[Lato] 
+            max-[990px]:w-full 
+            max-[990px]:overflow-hidden
+            max-[990px]:h-[60px]
+            max-[990px]:min-h-[60px]
+            max-[990px]:bg-[--white]
+            ${menu && 'open-main'}
+        `}>
+            <div className="flex items-center my-8 max-[990px]:my-[1rem] max-[990px]:flex max-[990px]:justify-between">
                 <Image 
                     src={Logo} 
-                    className={style.logo} 
+                    className="max-w-[253px] min-h-8 max-h-8" 
                     priority 
                     alt="logo-sidebar"
                     width={width <= 990 ? 100 : 153}
@@ -113,12 +119,14 @@ export const Sidebar = () => {
                 />
                 <HamburguerMenu onClick={() => setMenu(!menu)} />
             </div>
-            <ul className={`${style.menuItems}`}>
+            <ul className="flex-col flex gap-[10px] max-[990px]:mt-[30px]">
                 {options.map((option, i) => (
                     <li key={i}>
                         <Link
                             href={option.url}
-                            className={`${style.buttonSide} ${initial === i && style.active}`}
+                            className={`gap-[10px] flex items-center py-3 px-4 rounded-xl text-base text-[--gray42] font-semibold item-sidebar 
+                                ${initial === i && 'active'}
+                            `}
                             onClick={() => setInitial(i)}
                         >
                             {<option.icon/>}

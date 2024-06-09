@@ -7,7 +7,7 @@ export default async function Home() {
             <section className={style.homeLeft}>
                 <HeadHome />
 
-                <div style={{ maxWidth: 400 }}>
+                <div className="w-80">
                     <SelectSimple 
                         label="Input prueba" 
                         required 
@@ -15,7 +15,11 @@ export default async function Home() {
                         options={[
                             {id: 1, name: 'prueba 1'},
                             {id: 2, name: 'prueba 2'},
-                            {id: 3, name: 'prueba 3'}
+                            {id: 3, name: 'prueba 3'},
+                            {id: 4, name: 'prueba 4'},
+                            {id: 5, name: 'prueba 5'},
+                            {id: 6, name: 'prueba 6'},
+                            {id: 7, name: 'prueba 7'},
                         ]}
                     />
                 </div>
