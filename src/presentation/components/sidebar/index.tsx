@@ -8,96 +8,33 @@ import { useMenuStore } from "@/presentation/stores/menu-store";
 
 import Logo from "@/assets/logos/logo.png";
 import { HamburguerMenu } from "../shared/hamburguer-menu";
-import { PiHouse } from 'react-icons/pi';
-import { CiDeliveryTruck } from "react-icons/ci";
-import { IoChatboxEllipsesOutline, IoPersonOutline } from "react-icons/io5";
-import MarketplaceIcon from "@/presentation/utils/MarketplaceIcon";
-import JobsIcon from "@/presentation/utils/JobsIcon";
-import BusinessIcon from "@/presentation/utils/BusinessIcon";
-import { usePathname } from "next/navigation";
 
-interface Options {
-    name: string;
-    icon: any;
-    url: string;
-}
+import { usePathname } from "next/navigation";
+import { menuOptions } from "@/presentation/utils/MenuOptions";
 
 export const Sidebar = () => {
 
     const width = useWindowSize().width!;
+    const pathname = usePathname();
 
     const menu = useMenuStore(state => state.visible);
     const setMenu = useMenuStore(state => state.setVisible);
 
     const [initial, setInitial] = useState<number | null>(null);
-    const [options] = useState<Options[]>([
-        {
-            name: "Inicio",
-            icon: PiHouse,
-            url: "/home",
-        },
-        {
-            name: "Marketplace",
-            icon: MarketplaceIcon,
-            url: "/marketplace",
-        },
-        {
-            name: "Empleos",
-            icon: JobsIcon,
-            url: "/jobs",
-        },
-        {
-            name: "Negocios",
-            icon: BusinessIcon,
-            url: "/business",
-        },
-        {
-            name: "Distribuidores",
-            icon: CiDeliveryTruck,
-            url: "/distributors",
-        },
-        {
-            name: "Mensajes",
-            icon: IoChatboxEllipsesOutline,
-            url: "/messages",
-        },
-        {
-            name: "Perfil",
-            icon: IoPersonOutline,
-            url: "/profile",
-        },
-    ]);
-
-    const pathname = usePathname();
+    
+    const routeValues: { [key in string]?: number } = {
+        '/home': 0,
+        '/marketplace': 1,
+        '/jobs': 2,
+        '/business': 3,
+        '/distributors': 4,
+        '/messages': 5,
+        '/profile': 6
+    };
 
     useEffect(() => {
-        switch (pathname) {
-            case '/home':
-                setInitial(0)
-            break;
-            case '/marketplace':
-                setInitial(1)
-            break;
-            case '/jobs':
-                setInitial(2)
-            break;
-            case '/business':
-                setInitial(3)
-            break;
-            case '/distributors':
-                setInitial(4)
-            break;
-            case '/messages':
-                setInitial(5)
-            break;
-            case '/profile':
-                setInitial(6)
-            break;
-            default:
-                setInitial(null)
-            break;
-        }
-    },[]);
+        setInitial(routeValues[pathname] ?? null);
+    },[pathname]);
 
     return (
         <nav className={`w-[304px] min-h-screen box-border px-8 border-r border-[--grayE0] font-[Lato] 
@@ -120,7 +57,7 @@ export const Sidebar = () => {
                 <HamburguerMenu onClick={() => setMenu(!menu)} />
             </div>
             <ul className="flex-col flex gap-[10px] max-[990px]:mt-[30px]">
-                {options.map((option, i) => (
+                {menuOptions.map((option, i) => (
                     <li key={i}>
                         <Link
                             href={option.url}
