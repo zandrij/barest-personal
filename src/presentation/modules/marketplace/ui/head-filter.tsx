@@ -11,25 +11,28 @@ export const HeadFilterMarketplace: FC<Props> = ({}) => {
     const btnHover = "hover:bg-[--orangeLight] hover:text-[--orange]";
     const btnTransition = "transition-all duration-200";
     const btnActive = "bg-[--orangeLight] text-[--orange]";
-
-    const barActive = "w-12 h-[2px] bg-[--orange] absolute m-auto left-[0] right-[0] bottom-[7px] rounded-[12px]";
+    const barBase = "w-12 h-[2px] bg-[--orange] absolute m-auto left-[0] right-[0] bottom-[7px] rounded-[12px]";
+    const barActive = `${barBase} ${btnActive} ${btnTransition}`;
+    const barHover = `${barBase} group-hover:block hidden ${btnTransition}`;
 
     return (
-        <article className="bg-[--white] p-4 rounded-xl mt-9 shadow-custom flex flex-col">
-            <section className="flex flex-row gap-1">
+        <article className="bg-[--white] p-4 rounded-xl mt-7 shadow-custom flex flex-col">
+            <section className="flex flex-row gap-1 sm:justify-start justify-center">
                 {options.map((item, i) => (
                     <button
                         key={i}
                         onClick={() => setActive(i)}
-                        className={`${btnBody} ${btnHover} ${btnTransition} ${active === i && btnActive}`}
+                        className={`${btnBody} ${btnHover} ${btnTransition} ${active === i && btnActive} group`}
                     >
                         <span className="text-lg font-semibold font-[Lato] m-auto">
                             {item.name}
                         </span>
-                        <span className={`${active === i && barActive}`} />
+                        <span className={`${active === i ? barActive : barHover}`} />
                     </button>
                 ))}
             </section>
         </article>
     );
 };
+
+
