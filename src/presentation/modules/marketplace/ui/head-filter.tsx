@@ -1,12 +1,11 @@
 "use client";
-import { ButtonSimple } from "@/presentation/components/shared/form/button-simple";
+import { FC, useState } from "react";
 import { InputSimple } from "@/presentation/components/shared/form/input-simple";
 import { SelectClick } from "@/presentation/components/shared/form/select-click";
-import { SelectSimple } from "@/presentation/components/shared/form/select-simple";
-import { FC, useState } from "react";
+import { ButtonSimple } from "@/presentation/components/shared/form/button-simple";
 import { FiSearch } from "react-icons/fi";
-import { HiOutlineLocationMarker } from "react-icons/hi";
 import { PiListDashes } from "react-icons/pi";
+import { HiOutlineLocationMarker } from "react-icons/hi";
 
 interface Props {}
 
@@ -14,7 +13,7 @@ export const HeadFilterMarketplace: FC<Props> = ({}) => {
     const [options] = useState([{ name: "Productos" }, { name: "Servicios" }]);
     const [active, setActive] = useState(0);
 
-    const btnBody = "h-11 w-[132px] rounded-xl flex items-center relative font-semibold";
+    const btnBody = "h-11 w-[132px] rounded-xl flex items-center relative font-semibold group";
     const btnHover = "hover:bg-[--orangeLight] hover:text-[--orange]";
     const btnTransition = "transition-all duration-200";
     const btnActive = "bg-[--orangeLight] text-[--orange] font-[800!important]";
@@ -29,7 +28,7 @@ export const HeadFilterMarketplace: FC<Props> = ({}) => {
                     <button
                         key={i}
                         onClick={() => setActive(i)}
-                        className={`${btnBody} ${btnHover} ${btnTransition} ${active === i && btnActive} group`}
+                        className={`${btnBody} ${btnHover} ${btnTransition} ${active === i && btnActive}`}
                     >
                         <span className="text-base font-[Lato] m-auto">
                             {item.name}
