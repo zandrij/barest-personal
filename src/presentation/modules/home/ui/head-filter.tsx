@@ -14,7 +14,7 @@ export const HeadFilter = () => {
     const width = useWindowSize().width!;
 
     return (
-        <article className="w-full rounded-2xl px-6 pb-7 pt-5 bg-[--darkpurple] flex flex-col items-center">
+        <article className="w-full rounded-2xl px-6 pb-7 sm:mt-0 mt-4 pt-5 bg-[--darkpurple] flex flex-col items-center">
             <h2 className="text-xl font-bold font-[Sora] text-[--white] block w-full my-3">¿Qué estas buscando?</h2>
             <form action="" className="gap-4 flex sm:flex-row flex-col w-full">
                 <SelectSimple 

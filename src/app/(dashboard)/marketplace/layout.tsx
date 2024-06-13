@@ -1,4 +1,4 @@
-import { HeaderLayout } from "@/presentation";
+import { HeadFilterMarketplace, HeaderLayout } from "@/presentation";
 
 export default function MarketplaceLayout({
   children,
@@ -7,8 +7,10 @@ export default function MarketplaceLayout({
 }>) {
   return (
     <section>
-        <article>
-            <HeaderLayout title="Marketplace" visibleSearch={false} />
+        <HeaderLayout title="Marketplace" visibleSearch={false} />
+
+        <article className="px-8">
+            <HeadFilterMarketplace />
         </article>
         {children}
     </section>
