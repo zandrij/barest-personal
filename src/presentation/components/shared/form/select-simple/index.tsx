@@ -13,7 +13,9 @@ interface Props {
   onKeyUp?: (e: any) => void;
   onKeyDown?: (e: any) => void;
   options: { id: number; name: string }[];
-  style?: React.CSSProperties
+  style?: React.CSSProperties,
+  className?: string,
+  size?: 'normal' | 'large'
 }
 
 export const SelectSimple: FC<Props> = ({
@@ -27,7 +29,9 @@ export const SelectSimple: FC<Props> = ({
   onKeyDown,
   onKeyUp,
   options,
-  style
+  style,
+  className,
+  size = 'normal'
 }) => {
     const [show, setShow] = useState(false);
     const [inputValue, setInputValue] = useState(value);
@@ -45,10 +49,11 @@ export const SelectSimple: FC<Props> = ({
         }, 100);
     };
 
+    const inputBody = "w-full min-h-10 relative flex items-center font-normal font-[Lato] cursor-pointer text-base text-[--gray21]";
+    const input = `w-full ${size === 'normal' ? 'min-h-10' : 'min-h-12'} cursor-pointer rounded-xl outline-none border border-[--grayBD] placeholder:text-[--gray9E] pr-10 pl-3`;
+    
     return (
-        <div className={`min-w-24 flex-col w-full cursor-pointer 
-            ${show&& options.length < 5 ? 'min-h-[280px] h-fit' : show && options.length > 5 && 'min-h-[300px]'}
-        `} style={style}>
+        <div className={`min-w-24 flex-col w-full cursor-pointer ${className}`} style={style}>
             {/* label */}
             {label && (
                 <label className="block font-semibold text-sm mt-1 mb-1 text-[--gray61] font-[Lato]">
@@ -59,15 +64,13 @@ export const SelectSimple: FC<Props> = ({
             <div className="w-full relative flex items-center">
                 {/* input body */}
                 <div
-                    className="w-full relative flex items-center font-normal font-[Lato] cursor-pointer text-base text-[--gray21]"
+                    className={`${inputBody}`}
                     onBlur={onBlur}
                     onClick={() => setShow(!show)}
                 >
                     <input
                         type="text"
-                        className={`w-full h-12 cursor-pointer rounded-xl outline-none border border-[--grayBD] placeholder:text-[--gray9E] pr-10 pl-3
-                            ${error && "border-[--danger]"}
-                        `}
+                        className={`${input} ${error && "border-[--danger]"}`}
                         placeholder={placeholder}
                         required={required}
                         defaultValue={inputValue}

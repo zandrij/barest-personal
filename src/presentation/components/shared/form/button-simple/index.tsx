@@ -25,17 +25,18 @@ export const ButtonSimple: FC<Props> = ({
         <button
             className={`bg-[${bgColor}] text-[${color}] block
                 ${size === "small" && "px-[8px] py-3"}
-                ${size === "normal" && "px-4 py-[10px] rounded-xl h-10"}
-                ${size === "large" && "px-[14px] py-5"}
-                ${rounded && "rounded-[100px]"}
+                ${size === "normal" && "px-4 py-[10px] h-10"}
+                ${size === "large" && "px-[14px] h-12"}
+                ${rounded ? "rounded-[100px]" : "rounded-xl"}
                 ${className}
+                flex items-center
             `}
             style={style}
          >
-            <span className={`justify-center m-auto font-bold font-[Lato] text-[--white] flex gap-2 items-center
+            <span className={`m-auto font-bold font-[Lato] text-[--white] flex gap-2 items-center
                 ${size === "small" && " text-sm"}
                 ${size === "normal" && " text-sm"}
-                ${size === "large" && " text-lg"}
+                ${size === "large" && " text-base"}
             `}>
                 {icon && (<span className="text-xl">{icon}</span>)}
                 {label}

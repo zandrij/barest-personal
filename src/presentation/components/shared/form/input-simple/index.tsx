@@ -14,7 +14,8 @@ interface Props {
   onKeyDown?: (e: any) => void;
   style?: React.CSSProperties,
   startIcon?: IconType | any,
-  grayInput?: boolean
+  grayInput?: boolean,
+  size?: 'normal' | 'large'
 }
 
 export const InputSimple: FC<Props> = ({
@@ -29,11 +30,12 @@ export const InputSimple: FC<Props> = ({
   onKeyUp,
   style,
   startIcon,
-  grayInput
+  grayInput,
+  size = 'normal',
 }) => {
 
     const inputBody = "w-full relative flex items-center font-normal font-[Lato] text-base text-[--gray21]";
-    const input = "w-full h-10 rounded-xl outline-none border border-[--grayE0] placeholder:text-[--gray9E] pr-10 pl-3";
+    const input = `w-full ${size === 'normal' ? 'h-10' : 'h-12'} h-10 rounded-xl outline-none border border-[--grayE0] placeholder:text-[--gray9E] pr-10 pl-3`;
     const inputPlaceholder = "placeholder:first-letter:uppercase";
     const gray = "bg-[--grayF5] border-[--grayF5] font-[--gray9E]";
 
