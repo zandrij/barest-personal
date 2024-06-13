@@ -1,53 +1,69 @@
-import { FC } from "react";
-import style from "./index.module.scss";
+"use client";
+import { FC, useState } from "react";
+import { BsChevronDown } from "react-icons/bs";
 
 interface Props {
-    name?: string;
-    label?: string;
-    value?: string;
-    required?: boolean;
-    error?: boolean;
-    errorMessage?: string;
-    placeholder?: string;
-    onChange?: (e:any) => void;
-    onKeyUp?: (e:any) => void;
-    onKeyDown?: (e:any) => void;
-    icon?: any;
+  label?: string;
+  value?: string;
+  required?: boolean;
+  error?: boolean;
+  errorMessage?: string;
+  placeholder?: string;
+  onChange?: (e: any) => void;
+  onKeyUp?: (e: any) => void;
+  onKeyDown?: (e: any) => void;
+  style?: React.CSSProperties
 }
 
 export const InputSimple: FC<Props> = ({
-    name,
-    label,
-    value,
-    required = false,
-    error = false,
-    errorMessage,
-    placeholder,
-    onChange,
-    onKeyDown,
-    onKeyUp,
-    icon
+  label,
+  value,
+  required = false,
+  error = false,
+  errorMessage,
+  placeholder,
+  onChange,
+  onKeyDown,
+  onKeyUp,
+  style
 }) => {
     return (
-        <div className={style.inputBody}>
-            <label htmlFor={name} className={style.label}>
-                {label} {required && <span>*</span>}
+        <div className={`min-w-24 flex-col w-full cursor-pointer`} style={style}>
+            {/* label */}
+            <label className="block font-semibold text-sm mt-1 mb-1 text-[--gray61] font-[Lato]">
+                {label} {required && <span className="text-[--danger]">*</span>}
             </label>
-            <div className={style.inputSub}>
-                {icon && (<div className={style.icon}>{icon}</div>)}
-                <input
-                    type="text"
-                    className={`${style.input} ${style.error}`}
-                    style={{ paddingLeft: icon && 40 }}
-                    placeholder={placeholder}
-                    required={required}
-                    value={value}
-                    onChange={onChange}
-                    onKeyUp={onKeyUp}
-                    onKeyDown={onKeyDown}
-                />
+            {/* input */}
+            <div className="w-full relative flex items-center">
+                {/* input body */}
+                <div
+                    className="w-full relative flex items-center font-normal font-[Lato] cursor-pointer text-base text-[--gray21]"
+                >
+                    <input
+                        type="text"
+                        className={`w-full h-12 cursor-pointer rounded-xl outline-none border border-[--grayBD] placeholder:text-[--gray9E] pr-10 pl-3
+                            ${error && "border-[--danger]"}
+                             placeholder:first-letter:uppercase
+                        `}
+                        placeholder={placeholder}
+                        required={required}
+                        defaultValue={value}
+                        onChange={onChange}
+                        onKeyUp={onKeyUp}
+                        onKeyDown={onKeyDown}
+                    />
+                    {/* icon */}
+                    {/* <div className="absolute right-3 w-4 h-4 text-[--gray42] transition-all duration-200">
+                        {<BsChevronDown size={16} />}
+                    </div> */}
+                </div>
             </div>
-            {error && <small className={style.message}>{errorMessage}</small>}
+            {/* error text */}
+            {error && (
+                <small className="block text-sm font-normal font-[Lato] text-[--danger] my-1">
+                {errorMessage}
+                </small>
+            )}
         </div>
     );
 };

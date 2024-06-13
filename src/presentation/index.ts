@@ -16,4 +16,4 @@ export * from "./modules/messages/containers/conversations";
 export * from "./modules/profile/containers/profile-sidebar";
 
 export * from "./modules/home/containers/head-home";
-export * from "./modules/home/styles/home.module.scss";
+export * from "./modules/home/containers/head-filter";
