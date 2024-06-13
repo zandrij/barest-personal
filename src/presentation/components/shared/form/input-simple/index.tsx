@@ -1,6 +1,6 @@
 "use client";
-import { FC, useState } from "react";
-import { BsChevronDown } from "react-icons/bs";
+import { FC } from "react";
+import { IconType } from "react-icons";
 
 interface Props {
   label?: string;
@@ -12,7 +12,9 @@ interface Props {
   onChange?: (e: any) => void;
   onKeyUp?: (e: any) => void;
   onKeyDown?: (e: any) => void;
-  style?: React.CSSProperties
+  style?: React.CSSProperties,
+  startIcon?: IconType | any,
+  grayInput?: boolean
 }
 
 export const InputSimple: FC<Props> = ({
@@ -25,26 +27,35 @@ export const InputSimple: FC<Props> = ({
   onChange,
   onKeyDown,
   onKeyUp,
-  style
+  style,
+  startIcon,
+  grayInput
 }) => {
+
+    const inputBody = "w-full relative flex items-center font-normal font-[Lato] text-base text-[--gray21]";
+    const input = "w-full h-10 rounded-xl outline-none border border-[--grayE0] placeholder:text-[--gray9E] pr-10 pl-3";
+    const inputPlaceholder = "placeholder:first-letter:uppercase";
+    const gray = "bg-[--grayF5] border-[--grayF5] font-[--gray9E]";
+
     return (
-        <div className={`min-w-24 flex-col w-full cursor-pointer`} style={style}>
+        <div className={`min-w-24 flex-col w-full p-0`} style={style}>
             {/* label */}
-            <label className="block font-semibold text-sm mt-1 mb-1 text-[--gray61] font-[Lato]">
+            {label && (<label className="block font-semibold text-sm mt-1 mb-1 text-[--gray61] font-[Lato]">
                 {label} {required && <span className="text-[--danger]">*</span>}
-            </label>
+            </label>)}
             {/* input */}
-            <div className="w-full relative flex items-center">
+            <div className={`w-full relative flex items-center rounded-xl`}>
+                {/* startIcon */}
+                    {startIcon && (
+                        <div className="absolute left-3 w-4 h-4 text-[--gray42] text-base z-[1]">
+                            {startIcon}
+                        </div>
+                    )}
                 {/* input body */}
-                <div
-                    className="w-full relative flex items-center font-normal font-[Lato] cursor-pointer text-base text-[--gray21]"
-                >
+                <div className={`${inputBody} ${grayInput && gray} rounded-xl`}>
                     <input
                         type="text"
-                        className={`w-full h-12 cursor-pointer rounded-xl outline-none border border-[--grayBD] placeholder:text-[--gray9E] pr-10 pl-3
-                            ${error && "border-[--danger]"}
-                             placeholder:first-letter:uppercase
-                        `}
+                        className={`${input} ${error && "border-[--danger]"} ${grayInput && gray} ${inputPlaceholder} ${startIcon && " pl-8"}`}
                         placeholder={placeholder}
                         required={required}
                         defaultValue={value}
@@ -52,10 +63,6 @@ export const InputSimple: FC<Props> = ({
                         onKeyUp={onKeyUp}
                         onKeyDown={onKeyDown}
                     />
-                    {/* icon */}
-                    {/* <div className="absolute right-3 w-4 h-4 text-[--gray42] transition-all duration-200">
-                        {<BsChevronDown size={16} />}
-                    </div> */}
                 </div>
             </div>
             {/* error text */}

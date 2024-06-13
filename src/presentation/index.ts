@@ -8,8 +8,11 @@ export * from "./components/shared/header/header-layout";
 export * from "./components/shared/header/button-header";
 export * from "./components/shared/header/input-header";
 
+//FORM
 export * from "./components/shared/form/input-simple";
 export * from "./components/shared/form/select-simple";
+export * from "./components/shared/form/select-click";
+
 
 export * from "./components/shared/layout/content-separator";
 

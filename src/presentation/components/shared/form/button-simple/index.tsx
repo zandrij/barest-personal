@@ -6,7 +6,9 @@ interface Props {
   bgColor?: string,
   color?: string,
   rounded?: boolean,
-  icon?: any
+  icon?: any,
+  style?: React.CSSProperties,
+  className?: string
 }
 
 export const ButtonSimple: FC<Props> = ({ 
@@ -15,23 +17,27 @@ export const ButtonSimple: FC<Props> = ({
     bgColor = '--orange', 
     color = '#fff', 
     rounded = false,
-    icon
+    icon,
+    style,
+    className
 }) => {
     return (
         <button
             className={`bg-[${bgColor}] text-[${color}] block
                 ${size === "small" && "px-[8px] py-3"}
-                ${size === "normal" && "px-4 py-[10px]"}
+                ${size === "normal" && "px-4 py-[10px] rounded-xl h-10"}
                 ${size === "large" && "px-[14px] py-5"}
-                ${rounded && " rounded-[100px]"}
+                ${rounded && "rounded-[100px]"}
+                ${className}
             `}
+            style={style}
          >
-            <span className={`justify-center m-auto font-extrabold font-[Lato] text-[--white] flex gap-2 items-center
+            <span className={`justify-center m-auto font-bold font-[Lato] text-[--white] flex gap-2 items-center
                 ${size === "small" && " text-sm"}
-                ${size === "normal" && " text-base"}
+                ${size === "normal" && " text-sm"}
                 ${size === "large" && " text-lg"}
             `}>
-                <span className="text-xl">{icon}</span>
+                {icon && (<span className="text-xl">{icon}</span>)}
                 {label}
             </span>
         </button>

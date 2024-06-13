@@ -50,9 +50,11 @@ export const SelectSimple: FC<Props> = ({
             ${show&& options.length < 5 ? 'min-h-[280px] h-fit' : show && options.length > 5 && 'min-h-[300px]'}
         `} style={style}>
             {/* label */}
-            <label className="block font-semibold text-sm mt-1 mb-1 text-[--gray61] font-[Lato]">
-                {label} {required && <span className="text-[--danger]">*</span>}
-            </label>
+            {label && (
+                <label className="block font-semibold text-sm mt-1 mb-1 text-[--gray61] font-[Lato]">
+                    {label} {required && <span className="text-[--danger]">*</span>}
+                </label>
+            )}
             {/* input */}
             <div className="w-full relative flex items-center">
                 {/* input body */}
