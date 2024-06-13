@@ -13,6 +13,7 @@ interface Props {
   onKeyUp?: (e: any) => void;
   onKeyDown?: (e: any) => void;
   options: { id: number; name: string }[];
+  style?: React.CSSProperties
 }
 
 export const SelectSimple: FC<Props> = ({
@@ -26,12 +27,16 @@ export const SelectSimple: FC<Props> = ({
   onKeyDown,
   onKeyUp,
   options,
+  style
 }) => {
     const [show, setShow] = useState(false);
     const [inputValue, setInputValue] = useState(value);
 
     const selectValue = (value: any) => {
-        if(value.name) setInputValue(value.name)
+        if(value.name) {
+            setInputValue(value.name);
+            onChange && onChange(value.name)
+        } 
     };
 
     const onBlur = () => {
@@ -43,7 +48,7 @@ export const SelectSimple: FC<Props> = ({
     return (
         <div className={`min-w-24 flex-col w-full cursor-pointer 
             ${show&& options.length < 5 ? 'min-h-[280px] h-fit' : show && options.length > 5 && 'min-h-[300px]'}
-        `}>
+        `} style={style}>
             {/* label */}
             <label className="block font-semibold text-sm mt-1 mb-1 text-[--gray61] font-[Lato]">
                 {label} {required && <span className="text-[--danger]">*</span>}
@@ -64,7 +69,6 @@ export const SelectSimple: FC<Props> = ({
                         placeholder={placeholder}
                         required={required}
                         defaultValue={inputValue}
-                        onChange={onChange}
                         onKeyUp={onKeyUp}
                         onKeyDown={onKeyDown}
                         readOnly
