@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useWindowSize } from "@uidotdev/usehooks";
 import { useMenuStore } from "@/presentation/stores/menu-store";
 
-import Logo from "@/assets/logos/logo-svg.svg";
+import Logo from "@/assets/logos/logo.png";
 import { HamburguerMenu } from "../shared/hamburguer-menu";
 import { PiHouse } from 'react-icons/pi';
 import { CiDeliveryTruck } from "react-icons/ci";
@@ -15,7 +15,6 @@ import MarketplaceIcon from "@/presentation/utils/MarketplaceIcon";
 import JobsIcon from "@/presentation/utils/JobsIcon";
 import BusinessIcon from "@/presentation/utils/BusinessIcon";
 import { usePathname } from "next/navigation";
-import style from '@/presentation/modules/home/styles/home.module.scss';
 
 interface Options {
     name: string;
@@ -112,11 +111,11 @@ export const Sidebar = () => {
             <div className="flex items-center my-8 max-[990px]:my-[1rem] max-[990px]:flex max-[990px]:justify-between">
                 <Image 
                     src={Logo} 
-                    className="max-w-[253px] min-h-8 max-h-8" 
+                    className="max-w-[138px]" 
                     priority 
                     alt="logo-sidebar"
-                    width={width <= 990 ? 100 : 153}
-                    height={width <= 990 ? 32 : 32}
+                    width={width <= 990 ? 100 : 138}
+                    height={width <= 990 ? 32 : 29.05}
                 />
                 <HamburguerMenu onClick={() => setMenu(!menu)} />
             </div>
