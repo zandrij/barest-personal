@@ -19,6 +19,7 @@ export const HeadFilterMarketplace: FC<Props> = ({}) => {
             <section className="flex flex-row gap-1">
                 {options.map((item, i) => (
                     <button
+                        key={i}
                         onClick={() => setActive(i)}
                         className={`${btnBody} ${btnHover} ${btnTransition} ${active === i && btnActive}`}
                     >
