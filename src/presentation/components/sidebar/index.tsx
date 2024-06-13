@@ -15,6 +15,7 @@ import MarketplaceIcon from "@/presentation/utils/MarketplaceIcon";
 import JobsIcon from "@/presentation/utils/JobsIcon";
 import BusinessIcon from "@/presentation/utils/BusinessIcon";
 import { usePathname } from "next/navigation";
+import style from '@/presentation/modules/home/styles/home.module.scss';
 
 interface Options {
     name: string;
@@ -124,13 +125,13 @@ export const Sidebar = () => {
                     <li key={i}>
                         <Link
                             href={option.url}
-                            className={`gap-[10px] flex items-center py-3 px-4 rounded-xl text-base text-[--gray42] font-semibold item-sidebar 
+                            className={`gap-[10px] flex items-center py-3 px-4 rounded-xl text-xl text-[--gray42] font-semibold item-sidebar 
                                 ${initial === i && 'active'}
                             `}
                             onClick={() => setInitial(i)}
                         >
-                            {<option.icon/>}
-                            <span>{option.name}</span>
+                            {<option.icon  />}
+                            <span className="text-base">{option.name}</span>
                         </Link>
                     </li>
                 ))}
