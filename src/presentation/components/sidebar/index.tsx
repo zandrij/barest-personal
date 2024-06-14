@@ -9,7 +9,7 @@ import { useMenuStore } from "@/presentation/stores/menu-store";
 import Logo from "@/assets/logos/logo.png";
 import { HamburguerMenu } from "../shared/hamburguer-menu";
 
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { menuOptions } from "@/presentation/utils/MenuOptions";
 
 export const Sidebar = () => {
