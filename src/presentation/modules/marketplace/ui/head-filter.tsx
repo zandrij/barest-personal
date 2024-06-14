@@ -1,17 +1,22 @@
 "use client";
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { InputSimple } from "@/presentation/components/shared/form/input-simple";
 import { SelectClick } from "@/presentation/components/shared/form/select-click";
 import { ButtonSimple } from "@/presentation/components/shared/form/button-simple";
 import { FiSearch } from "react-icons/fi";
 import { PiListDashes } from "react-icons/pi";
 import { HiOutlineLocationMarker } from "react-icons/hi";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { getCategories } from "../actions/filter-marketplace";
 
-interface Props {}
+interface Props {
+}
 
-export const HeadFilterMarketplace: FC<Props> = ({}) => {
+export const HeadFilterMarketplace: FC<Props> = ({  }) => {
     const [options] = useState([{ name: "Productos" }, { name: "Servicios" }]);
     const [active, setActive] = useState(0);
+    const searchParams = useSearchParams();
+    const typeParam = searchParams.get('type');
 
     const btnBody = "h-11 w-[132px] rounded-xl flex items-center relative font-semibold group";
     const btnHover = "hover:bg-[--orangeLight] hover:text-[--orange]";
@@ -20,6 +25,25 @@ export const HeadFilterMarketplace: FC<Props> = ({}) => {
     const barBase = "w-12 h-[2px] bg-[--orange] absolute m-auto left-[0] right-[0] bottom-[7px] rounded-[12px]";
     const barActive = `${barBase} ${btnActive} ${btnTransition}`;
     const barHover = `${barBase} group-hover:block hidden ${btnTransition}`;
+
+    useEffect(() => {
+        if (typeParam) {
+            if (typeParam === "products") {
+                if (active !== 1) setActive(0);
+            } else if (typeParam === "services") setActive(1);
+            getCategories(typeParam)
+        }
+    }, [typeParam]);
+
+    const pathname = usePathname();
+    const { replace } = useRouter();
+
+    useEffect(() => {
+        const params = new URLSearchParams(searchParams);
+        params.set("type", active === 0 ? 'products' : 'services');
+
+        replace(`${pathname}?${params.toString()}`);
+    },[active]);
 
     return (
         <article className="bg-[--white] p-4 rounded-xl mt-7 shadow-custom flex flex-col gap-4">
@@ -52,6 +76,7 @@ export const HeadFilterMarketplace: FC<Props> = ({}) => {
                 <SelectClick 
                     placeholder="En todo España" 
                     startIcon={<HiOutlineLocationMarker color="var(--gray42)" />}
+                    arrowIcon
                 />
                 <ButtonSimple label="Buscar" className="w-full sm:max-w-[106px]" />
             </section>

@@ -12,6 +12,7 @@ export default function MarketplaceLayout({
         <article className="px-8">
             <HeadFilterMarketplace />
         </article>
+        
         {children}
     </section>
   );

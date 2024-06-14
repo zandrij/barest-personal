@@ -20,7 +20,7 @@ export const menuOptions: Options[] = [
     {
         name: "Marketplace",
         icon: MarketplaceIcon,
-        url: "/marketplace",
+        url: "/marketplace?type=products",
     },
     {
         name: "Empleos",

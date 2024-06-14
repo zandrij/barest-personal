@@ -1,8 +1,9 @@
 
-export default async function Marketplace() {
+export default function Marketplace() {
+
     return (
         <article>
-            
+            {/* Contenido del componente */}
         </article>
     );
-};
+}

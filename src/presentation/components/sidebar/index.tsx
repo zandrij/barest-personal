@@ -9,7 +9,7 @@ import { useMenuStore } from "@/presentation/stores/menu-store";
 import Logo from "@/assets/logos/logo.png";
 import { HamburguerMenu } from "../shared/hamburguer-menu";
 
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import { menuOptions } from "@/presentation/utils/MenuOptions";
 
 export const Sidebar = () => {
@@ -24,7 +24,7 @@ export const Sidebar = () => {
     
     const routeValues: { [key in string]?: number } = {
         '/home': 0,
-        '/marketplace': 1,
+        '/marketplace?type=products': 1,
         '/jobs': 2,
         '/business': 3,
         '/distributors': 4,
@@ -73,5 +73,5 @@ export const Sidebar = () => {
                 ))}
             </ul>
         </nav>
-  );
+    );
 };
